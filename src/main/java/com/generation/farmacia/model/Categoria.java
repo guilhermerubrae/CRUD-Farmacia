@@ -3,6 +3,7 @@ package com.generation.farmacia.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -52,7 +53,48 @@ public class Categoria {
 	@OneToMany(mappedBy ="categoria", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("categoria")
 	private List<Produto>produto;
+	
+	public Categoria() {
+	}
 
+	public Categoria(Long id, String nome, String tipo, BigDecimal preco, LocalDate validade, boolean requerPrescricao,
+			List<Produto> produto) {
+		this.id = id;
+		this.nome = nome;
+		this.tipo = tipo;
+		this.preco = preco;
+		this.validade = validade;
+		this.requerPrescricao = requerPrescricao;
+		this.produto = produto;
+	}
+
+	// Construtor para criação rápida dos atributos importantes
+	public Categoria(String nome, BigDecimal preco, boolean requerPrescricao) {
+		this.nome = nome;
+		this.preco = preco;
+		this.requerPrescricao = requerPrescricao;
+	}
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(descricao, id, nome, preco, produto, requerPrescricao, tipo, validade);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Categoria other = (Categoria) obj;
+		return Objects.equals(descricao, other.descricao) && Objects.equals(id, other.id)
+				&& Objects.equals(nome, other.nome) && Objects.equals(preco, other.preco)
+				&& Objects.equals(produto, other.produto) && requerPrescricao == other.requerPrescricao
+				&& Objects.equals(tipo, other.tipo) && Objects.equals(validade, other.validade);
+	}
 
 	public List<Produto> getProduto() {
 		return produto;

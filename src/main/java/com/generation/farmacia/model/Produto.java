@@ -1,6 +1,8 @@
 package com.generation.farmacia.model;
 
 import java.math.BigDecimal;
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
@@ -42,6 +44,38 @@ public class Produto {
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
+	
+	public Produto() {
+    }
+
+    public Produto(Long id, String nome, String descricao, BigDecimal preco, int quantidade, String foto, Categoria categoria) {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.quantidade = quantidade;
+        this.foto = foto;
+        this.categoria = categoria;
+    }
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(categoria, descricao, foto, id, nome, preco, quantidade);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Produto other = (Produto) obj;
+		return Objects.equals(categoria, other.categoria) && Objects.equals(descricao, other.descricao)
+				&& Objects.equals(foto, other.foto) && Objects.equals(id, other.id) && Objects.equals(nome, other.nome)
+				&& Objects.equals(preco, other.preco) && quantidade == other.quantidade;
+	}
 
 	public Long getId() {
 		return id;
