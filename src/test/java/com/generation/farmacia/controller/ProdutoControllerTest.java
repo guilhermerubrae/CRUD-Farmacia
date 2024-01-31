@@ -43,6 +43,8 @@ public class ProdutoControllerTest {
         Categoria categoria = new Categoria();
         categoria.setNome("Medicamentos");
         categoria.setTipo("Categoria de Medicamentos");
+        categoria.setPreco(BigDecimal.valueOf(0.0)); // Defina um preço padrão ou ajuste o construtor da Categoria
+        categoria.setRequerPrescricao(false);
         categoriaRepository.save(categoria);
 
         Produto produto = new Produto(0L, "Aspirina", "Analgésico para alívio de dores", BigDecimal.valueOf(5.99), 100, "aspirina.jpg", categoria);
@@ -113,3 +115,4 @@ public class ProdutoControllerTest {
         assertEquals(HttpStatus.OK, resposta.getStatusCode());
     }
 }
+
