@@ -1,13 +1,13 @@
-package com.generation.CRUDFarmacia;
+package com.generation.farmacia;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CrudFarmaciaApplication {
+public class FarmaciaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CrudFarmaciaApplication.class, args);
+		SpringApplication.run(FarmaciaApplication.class, args);
 	}
 
 }

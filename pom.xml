@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.generation</groupId>
-	<artifactId>CRUD-Farmacia</artifactId>
+	<artifactId>farmacia</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CRUD-Farmacia</name>
+	<name>farmacia</name>
 	<description>Projeto Spring para Gestão de Produtos em uma Farmácia</description>
 	<properties>
 		<java.version>17</java.version>
