@@ -1,55 +1,30 @@
-# CRUD-Farmacia - Projeto Spring para Gestão de Produtos em uma Farmácia
+# Farmácia XYZ - Sistema de Gestão de Produtos
 
-Este projeto foi desenvolvido como parte de uma avaliação para a construção de uma aplicação backend para manipulação de dados de produtos em uma farmácia. Seguindo as boas práticas de desenvolvimento Spring, o projeto abrange a criação, leitura, atualização e remoção de dados referentes a Categorias e Produtos.
+Bem-vindo ao sistema de gestão de produtos da Farmácia XYZ! Este projeto foi desenvolvido para facilitar o gerenciamento de categorias e produtos, proporcionando uma experiência eficiente e intuitiva.
 
-## Configurando o Projeto
+## Funcionalidades Principais
 
-1. **Crie um repositório no GitHub:**
-   - `CRUD-Farmacia`
+### 1. Categorias
 
-2. **Configuração do Projeto:**
-   - Siga as boas práticas do Spring.
-   - Configure o banco de dados no arquivo `application.properties`.
-   - Valide a configuração no arquivo `pom.xml` e `application.properties`.
-   - Teste a aplicação para garantir a configuração correta.
+- **Listar Categorias:** Visualize todas as categorias disponíveis.
+- **Detalhes da Categoria:** Explore informações detalhadas de uma categoria específica.
+- **Adicionar Categoria:** Inclua novas categorias ao sistema.
+- **Atualizar Categoria:** Modifique informações de categorias existentes.
+- **Remover Categoria:** Exclua categorias, se necessário.
 
-3. **Branch: Configurando-o-Projeto**
-   - Crie e mude para a branch `Configurando-o-Projeto`.
-   - Suba as alterações até aqui.
+### 2. Produtos
 
-## CRUD de Categoria
+- **Listar Produtos:** Veja todos os produtos disponíveis, agrupados por categoria.
+- **Detalhes do Produto:** Explore detalhes específicos de um produto.
+- **Adicionar Produto:** Inclua novos produtos associados a uma categoria.
+- **Atualizar Produto:** Modifique informações de produtos existentes.
+- **Remover Produto:** Exclua produtos do sistema.
 
-4. **Implementação:**
-   - Crie 6 métodos para realizar o CRUD completo do recurso Categoria.
-   - Sem relacionamento com outras entidades.
+## Como Utilizar
 
-5. **Testes e Validação:**
-   - Teste a aplicação para garantir o funcionamento correto do CRUD de Categoria.
-   - Valide os conceitos de model, repository e controller.
+Para começar a utilizar o sistema, siga os passos abaixo:
 
-6. **Branch: CRUD-Categoria**
-   - Crie e mude para a branch `CRUD-Categoria`.
-   - Suba as alterações até aqui.
-
-## CRUD de Produto
-
-7. **Implementação:**
-   - Crie 6 métodos para realizar o CRUD completo do recurso Produto.
-   - Com relacionamento com a entidade Categoria.
-
-8. **Testes e Validação:**
-   - Teste a aplicação para garantir o funcionamento correto do CRUD de Produto.
-   - Valide os conceitos de relacionamento de entidades.
-
-9. **Branch: CRUD-Produto**
-   - Crie e mude para a branch `CRUD-Produto`.
-   - Suba as alterações até aqui.
-
-## README
-
-10. **README:**
-   - Crie um README.md com informações sobre o projeto, como configurar, executar, testar e outras informações relevantes.
-   - Forneça instruções claras para que outros desenvolvedores possam entender e contribuir para o projeto.
-
-**Observação:** Este projeto foi desenvolvido para atender aos requisitos específicos de uma avaliação e pode precisar de ajustes adicionais para atender a padrões específicos de produção.
+1. **Clone o Repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/CRUD-Farmacia.git
 
