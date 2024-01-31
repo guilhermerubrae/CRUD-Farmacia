@@ -43,7 +43,7 @@ public class ProdutoControllerTest {
         Categoria categoria = new Categoria();
         categoria.setNome("Medicamentos");
         categoria.setTipo("Categoria de Medicamentos");
-        categoria.setPreco(BigDecimal.valueOf(0.0)); // Defina um preço padrão ou ajuste o construtor da Categoria
+        categoria.setPreco(BigDecimal.valueOf(2.50)); 
         categoria.setRequerPrescricao(false);
         categoriaRepository.save(categoria);
 

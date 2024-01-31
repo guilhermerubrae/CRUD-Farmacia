@@ -3,8 +3,7 @@ package com.generation.farmacia.controller;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigDecimal;
-import java.util.List;
-import java.util.Optional;
+
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -45,7 +44,7 @@ public class CategoriaControllerTest {
         Categoria categoria = new Categoria();
         categoria.setNome("Medicamentos");
         categoria.setTipo("Categoria de Medicamentos");
-        categoria.setPreco(BigDecimal.valueOf(2.0)); 
+        categoria.setPreco(BigDecimal.valueOf(2.50)); 
         categoria.setRequerPrescricao(false);
         categoriaRepository.save(categoria);
 
@@ -56,7 +55,7 @@ public class CategoriaControllerTest {
     @Test
     @DisplayName("Cadastrar uma categoria")
     public void deveCriarUmaCategoria() {
-        HttpEntity<Categoria> corpoRequisicao = new HttpEntity<>(new Categoria(0L, "Antibióticos", "Categoria de Antibióticos", BigDecimal.valueOf(0.0), null, false, null));
+        HttpEntity<Categoria> corpoRequisicao = new HttpEntity<>(new Categoria(1L, "Antibióticos", "Categoria de Antibióticos", BigDecimal.valueOf(55.0), null, false, null));
 
         ResponseEntity<Categoria> corpoResposta = testRestTemplate
                 .exchange("/categorias", HttpMethod.POST, corpoRequisicao, Categoria.class);
@@ -67,10 +66,10 @@ public class CategoriaControllerTest {
     @Test
     @DisplayName("Não deve repetir uma categoria")
     public void naoDeveRepetirCategoria() {
-        Categoria categoriaExistente = new Categoria(0L, "Antibióticos", "Categoria de Antibióticos", BigDecimal.valueOf(0.0), null, false, null);
+        Categoria categoriaExistente = new Categoria(0L, "Antibióticos", "Categoria de Antibióticos", BigDecimal.valueOf(110.0), null, false, null);
         categoriaRepository.save(categoriaExistente);
 
-        HttpEntity<Categoria> corpoRequisicao = new HttpEntity<>(new Categoria(0L, "Antibióticos", "Categoria de Antibióticos", BigDecimal.valueOf(0.0), null, false, null));
+        HttpEntity<Categoria> corpoRequisicao = new HttpEntity<>(new Categoria(0L, "Antibióticos", "Categoria de Antibióticos", BigDecimal.valueOf(110.0), null, false, null));
 
         ResponseEntity<Categoria> corpoResposta = testRestTemplate
                 .exchange("/categorias", HttpMethod.POST, corpoRequisicao, Categoria.class);
