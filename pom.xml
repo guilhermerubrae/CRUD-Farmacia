@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.generation</groupId>
-	<artifactId>CRUD-Farmacia</artifactId>
+	<artifactId>farmacia</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CRUD-Farmacia</name>
+	<name>farmacia</name>
 	<description>Projeto Spring para Gestão de Produtos em uma Farmácia</description>
 	<properties>
 		<java.version>17</java.version>
@@ -39,18 +39,24 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+		    <dependency>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-test</artifactId>
+    	<scope>test</scope>
+    	<exclusions>
+    		<exclusion>
+    			<groupId>org.junit.vintage</groupId>
+    			<artifactId>junit-vintage-engine</artifactId>
+    		</exclusion>
+    	</exclusions>
+    </dependency>
 	</dependencies>
 
 	<build>
